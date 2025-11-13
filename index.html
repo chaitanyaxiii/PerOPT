@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PerformanceShop - Adaptive E-commerce with RUM Optimization</title>
+    <meta name="description" content="Experience intelligent adaptive e-commerce. Our platform automatically optimizes for your device, delivering the perfect shopping experience with 120+ products." />
+    <meta name="keywords" content="e-commerce, performance optimization, adaptive design, RUM, real user monitoring, online shopping" />
+    <meta name="author" content="PerformanceShop" />
+
+    <meta property="og:title" content="PerformanceShop - Smart Adaptive E-commerce" />
+    <meta property="og:description" content="Shop 120+ products with intelligent device optimization. Fast loading, smooth experience on any device." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="PerformanceShop - Adaptive E-commerce" />
+    <meta name="twitter:description" content="Experience shopping that adapts to your device capabilities" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Register service worker for caching
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js')
+            .then(registration => console.log('SW registered:', registration))
+            .catch(error => console.log('SW registration failed:', error));
+        });
+      }
+    </script>
+  </body>
+</html>

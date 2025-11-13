@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 215 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+
+    --primary: 200 95% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 190 75% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 15% 45%;
+
+    --accent: 25 95% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 20% 90%;
+    --input: 215 20% 90%;
+    --ring: 200 95% 45%;
+
+    --success: 150 80% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 40 95% 55%;
+    --warning-foreground: 0 0% 100%;
+
+    --info: 210 90% 60%;
+    --info-foreground: 0 0% 100%;
+
+    --radius: 0.5rem;
+
+    /* Performance widget colors */
+    --widget-bg: 215 25% 15%;
+    --widget-fg: 0 0% 100%;
+    --widget-border: 200 95% 45%;
+
+    /* Gradient definitions */
+    --gradient-primary: linear-gradient(135deg, hsl(200 95% 45%), hsl(190 75% 55%));
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 20% 98%));
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 215 30% 10%;
+    --foreground: 0 0% 95%;
+
+    --card: 215 25% 15%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 215 25% 15%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 200 95% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 190 75% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 215 25% 20%;
+    --muted-foreground: 215 15% 65%;
+
+    --accent: 25 95% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 25% 25%;
+    --input: 215 25% 25%;
+    --ring: 200 95% 50%;
+
+    --success: 150 80% 50%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 40 95% 60%;
+    --warning-foreground: 0 0% 100%;
+
+    --info: 210 90% 65%;
+    --info-foreground: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'kern' 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Performance optimizations */
+  .performance-optimized {
+    content-visibility: auto;
+  }
+
+  /* Slim mode styles */
+  .slim-mode * {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* Image optimization */
+  img {
+    content-visibility: auto;
+  }
+
+  /* Smooth scroll */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .slim-mode html {
+    scroll-behavior: auto;
+  }
+}
+
+@layer utilities {
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-105;
+  }
+
+  .fade-in {
+    animation: fade-in 0.3s ease-out;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .slide-up {
+    animation: slide-up 0.4s ease-out;
+  }
+
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
